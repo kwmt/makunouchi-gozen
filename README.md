@@ -51,6 +51,32 @@ web    /bin/sh -c /usr/sbin/rsysl ...   Up      0.0.0.0:5000->9000/tcp
 
 ### Intellij IDEAで使うためには
 
+1.コンテナのGoソースを `makunouchi-gozen/golang` にコピーする
+
 ```
 % docker cp web:/usr/local/go/ golang/
 ```
+
+2.Intellijでmakunouchi-gozenを開く
+3.SDKを設定する
+	* Project Structure(⌘;)を開いて、Add New SDKでGo SDKを追加する
+	* SDKのパスを選択する必要があるので、 `makunouchi-gozen/golang/go/src` を選択します。
+4.GOPATHを設定する
+	* Configure Go Librariesをクリック
+	* GlobalとProjectがありますが、Projectの方で `makunouchi-gozen/gopath` を追加します。
+
+これで補完が効くようになります。
+
+
+### 開発の流れ
+
+基本的には、  `makunouchi-gozen/gopath/src/gozen` 以下を触ります。
+変更したら `docker-compose exec web /bin/bash` でコンテナに入ってるターミナルで、
+
+```
+# bash ./build.sh
+```
+
+でビルド・実行します。
+
+
