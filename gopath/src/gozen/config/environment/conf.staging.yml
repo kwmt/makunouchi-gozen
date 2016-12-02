@@ -1,0 +1,27 @@
+database:
+  adapter: mysql
+  database:
+  username:
+  password:
+  host:
+  port: 3306
+
+
+oauth:
+  after_oauth_url: http://example.com
+  github:
+    client_id:
+    client_secret:
+  google:
+    client_id:
+    client_secret:
+    redirect_url:
+
+
+log:
+  verbose: false
+  file_path: /var/work/src/gozen/gozen.log
+
+push:
+    gcm:
+      api_key:
