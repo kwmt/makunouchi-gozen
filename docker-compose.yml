@@ -10,7 +10,6 @@ web:
   links:
     - db
   tty: true
-  command: /bin/bash
 
 db:
   container_name: db

@@ -22,7 +22,9 @@ ENV PATH $GOPATH/bin:$MY_PROJECT/golang/go/bin:$PATH
 # Unix syslog delivery error
 # https://groups.google.com/a/codenvy.com/d/msg/codenvy/6K6SgvK09oQ/oPswTD5aCAAJ
 RUN apt-get update -q &&  apt-get install -y rsyslog
-CMD /usr/sbin/rsyslogd -n &
+ENTRYPOINT /usr/sbin/rsyslogd -n
+
+CMD /bin/bash
 
 # サービスとしては必要ないが、調査したいときがあるため入れておきたい
 #RUN apt-get update && apt-get install -y net-tools
