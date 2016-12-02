@@ -18,5 +18,5 @@ test:
     - docker-compose version
     - docker-compose up -d
     - docker-compose ps
-    - docker-compose run web pwd
+    # - docker-compose run web pwd
     - docker-compose run web sh '-c' 'go run tools/init.go && go test ./controllers -bench -benchmem'
