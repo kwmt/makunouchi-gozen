@@ -5,11 +5,11 @@ machine:
   services:
     - docker
 
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
-    - git submodule foreach git pull origin master
+# checkout:
+#   post:
+#     - git submodule sync
+#     - git submodule update --init
+#     - git submodule foreach git pull origin master
 
 test:
   override:
