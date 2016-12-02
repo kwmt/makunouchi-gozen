@@ -1,0 +1,16 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+    - sudo pip install docker-compose
+  services:
+    - docker
+
+test:
+  override:
+#    - docker-compose build
+    - pwd
+    - docker-compose version
+    - docker-compose up -d
+    - docker-compose ps
+    - docker-compose run web pwd
+    - docker-compose run web sh '-c' 'go run tools/init.go && go test ./controllers -bench -benchmem'
