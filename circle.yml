@@ -18,5 +18,4 @@ test:
     - docker-compose version
     - docker-compose up -d
     - docker-compose ps
-    - docker-compose exec web go run tools/init.go
-    - docker-compose exec web go test ./controllers -bench -benchmem
+    - docker-compose run web sh '-c' 'go run tools/init.go && go test  ./controllers -bench -benchmem'
