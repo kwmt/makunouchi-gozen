@@ -1,0 +1,3 @@
+[submodule "gopath/src/gozen"]
+	path = gopath/src/gozen
+	url = git@github.com:techvein/gozen.git
